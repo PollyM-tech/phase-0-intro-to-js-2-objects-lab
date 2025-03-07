@@ -5,35 +5,36 @@ let employee = {
     streetAddress: "123 Nairobi Street", 
   };
 
+
   function updateEmployeeWithKeyAndValue(employee, key, value) {
     return {
       ...employee, 
       [key]: value, 
   }
 }
+console.log(updateEmployeeWithKeyAndValue(employee, "streetAddress", "Kiambu 132"));
+
 
   function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
     employee[key] = value; 
     return employee; 
   }
+  console.log(destructivelyUpdateEmployeeWithKeyAndValue(employee, "position", "Microsoft"));
+
 
   function deleteFromEmployeeByKey(employee, key) {
     let newEmployee = { ...employee }; 
     delete newEmployee[key]; 
     return newEmployee; 
   }
+  console.log(deleteFromEmployeeByKey(employee, "streetAddress"));
 
+  
   function destructivelyDeleteFromEmployeeByKey(employee, key) {
     delete employee[key]; // Delete the specified key from the original object
     return employee; 
   }
-  console.log(updateEmployeeWithKeyAndValue(employee, "streetAddress", "Kiambu 132"));
-
-  console.log(destructivelyUpdateEmployeeWithKeyAndValue(employee, "position", "Microsoft"));
-
-  console.log(deleteFromEmployeeByKey(employee, "streetAddress"));
-
-  console.log(destructivelyDeleteFromEmployeeByKey(employee, "streetAddress"));
+ console.log(destructivelyDeleteFromEmployeeByKey(employee, "streetAddress"));
 
   
   
